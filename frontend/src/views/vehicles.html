@@ -1,0 +1,26 @@
+<main class="main-content flex-1 transition-all duration-300" style="padding: 1rem;">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" style="margin-bottom: 1.5rem;">
+      <h2 class="text-lg md:text-xl font-bold text-emerald-500 font-mono uppercase">FROTA BLINDADA</h2>
+      <button id="btnAddVehicle" class="w-full sm:w-auto flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-black rounded font-mono font-bold text-sm transition-all" style="gap: 0.5rem; padding: 0.75rem 1.5rem; min-height: 44px;">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+        </svg>
+        + ADICIONAR VEÍCULO
+      </button>
+    </div>
+    
+    <!-- Loading State -->
+    <div id="vehiclesLoading" class="text-center py-12">
+      <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
+      <p class="text-zinc-400 font-mono text-sm mt-4">Carregando frota...</p>
+    </div>
+    
+    <!-- Error State -->
+    <div id="vehiclesError" class="bg-red-900/20 border border-red-500/50 rounded-lg p-4 text-red-400 font-mono text-sm" style="display: none;"></div>
+    
+    <!-- Vehicles Grid -->
+    <div id="vehiclesContainer" class="grid grid-cols-1 md:grid-cols-2" style="display: none; gap: 2rem;">
+      <!-- Cards serão carregados dinamicamente -->
+    </div>
+</main>
+

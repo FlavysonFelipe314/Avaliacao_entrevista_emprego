@@ -1,0 +1,115 @@
+<main class="main-content flex-1 transition-all duration-300" style="padding: 1rem;">
+    <div class="flex justify-between items-center mb-6" style="gap: 1rem;">
+      <h2 class="text-xl font-bold text-white font-mono uppercase">Gestão Financeira</h2>
+      <div class="flex" style="gap: 0.75rem;">
+        <button id="btnAddTransaction" class="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded border border-emerald-500 font-mono text-sm transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          NOVA TRANSAÇÃO
+        </button>
+        <button id="btnAddBudget" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded border border-blue-500 font-mono text-sm transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          NOVO ORÇAMENTO
+        </button>
+      </div>
+    </div>
+    
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-8">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 md:p-8">
+        <h3 class="text-zinc-400 font-mono text-xs uppercase mb-2" id="budget-label">Orçamento Total</h3>
+        <div class="text-2xl md:text-3xl font-bold text-emerald-500 font-mono" id="total-budget">R$ 0,00</div>
+        <p id="budget-warning" class="text-zinc-500 font-mono text-xs mt-2" style="display: none;">Sem orçamento ativo</p>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 md:p-8">
+        <h3 class="text-zinc-400 font-mono text-xs uppercase mb-2">Gasto Atual</h3>
+        <div class="text-2xl md:text-3xl font-bold text-yellow-500 font-mono" id="current-spent">R$ 0,00</div>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 md:p-8">
+        <h3 class="text-zinc-400 font-mono text-xs uppercase mb-2" id="available-label">Disponível</h3>
+        <div class="text-2xl md:text-3xl font-bold text-emerald-500 font-mono" id="available-budget">R$ 0,00</div>
+      </div>
+    </div>
+    
+    <!-- Budget Progress -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 md:p-8 mb-6 md:mb-8">
+      <h2 class="text-lg md:text-xl font-bold text-white font-mono mb-4 md:mb-8 uppercase">Distribuição de Orçamento</h2>
+      
+      <div class="space-y-4 md:space-y-8">
+        <!-- Combustível -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-zinc-300 font-mono text-sm uppercase">Combustível</span>
+            <span class="text-zinc-400 font-mono text-sm" id="fuel-percent">0%</span>
+          </div>
+          <div class="w-full bg-zinc-800 rounded-full h-4 border border-zinc-700">
+            <div id="fuel-progress" class="bg-emerald-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+          <div class="flex justify-between mt-1">
+            <span class="text-zinc-500 font-mono text-xs" id="fuel-used">R$ 0,00 usado</span>
+            <span class="text-zinc-500 font-mono text-xs" id="fuel-budget">R$ 0,00 orçado</span>
+          </div>
+        </div>
+        
+        <!-- Manutenção -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-zinc-300 font-mono text-sm uppercase">Manutenção</span>
+            <span class="text-zinc-400 font-mono text-sm" id="maintenance-percent">0%</span>
+          </div>
+          <div class="w-full bg-zinc-800 rounded-full h-4 border border-zinc-700">
+            <div id="maintenance-progress" class="bg-yellow-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+          <div class="flex justify-between mt-1">
+            <span class="text-zinc-500 font-mono text-xs" id="maintenance-used">R$ 0,00 usado</span>
+            <span class="text-zinc-500 font-mono text-xs" id="maintenance-budget">R$ 0,00 orçado</span>
+          </div>
+        </div>
+        
+        <!-- Salários -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-zinc-300 font-mono text-sm uppercase">Salários</span>
+            <span class="text-zinc-400 font-mono text-sm" id="salaries-percent">0%</span>
+          </div>
+          <div class="w-full bg-zinc-800 rounded-full h-4 border border-zinc-700">
+            <div id="salaries-progress" class="bg-blue-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+          <div class="flex justify-between mt-1">
+            <span class="text-zinc-500 font-mono text-xs" id="salaries-used">R$ 0,00 usado</span>
+            <span class="text-zinc-500 font-mono text-xs" id="salaries-budget">R$ 0,00 orçado</span>
+          </div>
+        </div>
+        
+        <!-- Outros -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-zinc-300 font-mono text-sm uppercase">Outros</span>
+            <span class="text-zinc-400 font-mono text-sm" id="others-percent">0%</span>
+          </div>
+          <div class="w-full bg-zinc-800 rounded-full h-4 border border-zinc-700">
+            <div id="others-progress" class="bg-zinc-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+          <div class="flex justify-between mt-1">
+            <span class="text-zinc-500 font-mono text-xs" id="others-used">R$ 0,00 usado</span>
+            <span class="text-zinc-500 font-mono text-xs" id="others-budget">R$ 0,00 orçado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Recent Transactions -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-lg">
+      <div class="border-b border-zinc-800 px-8 py-6 flex justify-between items-center">
+        <h2 class="text-xl font-bold text-white font-mono uppercase">Transações</h2>
+      </div>
+      <div id="transactions-list" class="divide-y divide-zinc-800">
+        <div class="px-8 py-6 text-zinc-500 font-mono text-sm text-center">
+          Carregando...
+        </div>
+      </div>
+    </div>
+</main>

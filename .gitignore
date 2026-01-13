@@ -1,0 +1,88 @@
+# Sistema de Gestão de Frotas - Git Ignore
+
+# Arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDEs e editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.fleet/
+.nova/
+.zed/
+
+# Logs
+*.log
+logs/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+.env.backup
+.env.production
+
+# Arquivos de configuração local
+config.local.php
+settings.local.json
+
+# Arquivos de cache
+.cache/
+*.cache
+
+# Arquivos de build
+dist/
+build/
+*.min.js
+*.min.css
+
+# Arquivos de teste
+coverage/
+.nyc_output/
+*.coverage
+
+# Arquivos de documentação gerados
+docs/_build/
+site/
+
+# Arquivos de backup do banco
+*.sql
+*.dump
+
+# Arquivos de Docker
+docker-compose.override.yml
+.dockerignore
+
+# Arquivos de CI/CD
+.github/workflows/*.local.yml
+
+# Arquivos de lock (manter apenas um)
+# package-lock.json (manter)
+# composer.lock (manter)
+
+# Arquivos específicos do projeto
+*.pid
+*.seed
+*.pid.lock
+

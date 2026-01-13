@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('drivers', function (Blueprint $table) {
+            $table->id();
+            $table->string('codigo')->unique();
+            $table->string('nome');
+            $table->string('cpf', 14)->unique();
+            $table->string('telefone', 20)->nullable();
+            $table->string('email')->nullable()->unique();
+            $table->string('password')->nullable();
+            $table->string('cnh', 11)->nullable();
+            $table->string('especialidade')->nullable();
+            $table->enum('status', ['active', 'inactive', 'available'])->default('inactive');
+            $table->string('veiculo_atual')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('drivers');
+    }
+};
+

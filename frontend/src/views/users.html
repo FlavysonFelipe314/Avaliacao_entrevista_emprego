@@ -1,0 +1,40 @@
+<main class="main-content flex-1 transition-all duration-300" style="padding: 1rem;">
+  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" style="margin-bottom: 1.5rem;">
+    <h2 class="text-lg md:text-xl font-bold text-emerald-500 font-mono uppercase">GERENCIAMENTO DE USUÁRIOS</h2>
+    <button id="btnAddUser" class="w-full sm:w-auto flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-black rounded font-mono font-bold text-sm transition-all" style="gap: 0.5rem; padding: 0.75rem 1.5rem; min-height: 44px;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+      </svg>
+      + ADICIONAR USUÁRIO
+    </button>
+  </div>
+  
+  <!-- Loading State -->
+  <div id="usersLoading" class="text-center py-12">
+    <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
+    <p class="text-zinc-400 font-mono text-sm mt-4">Carregando usuários...</p>
+  </div>
+  
+  <!-- Error State -->
+  <div id="usersError" class="bg-red-900/20 border border-red-500/50 rounded-lg p-4 text-red-400 font-mono text-sm" style="display: none;"></div>
+  
+  <!-- Table -->
+  <div class="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[600px]">
+        <thead class="bg-zinc-800 border-b border-zinc-700">
+          <tr>
+            <th class="text-left text-zinc-300 font-mono text-xs font-bold uppercase" style="padding: 1rem 1.5rem;">NOME</th>
+            <th class="text-left text-zinc-300 font-mono text-xs font-bold uppercase" style="padding: 1rem 1.5rem;">E-MAIL</th>
+            <th class="text-left text-zinc-300 font-mono text-xs font-bold uppercase" style="padding: 1rem 1.5rem;">DATA CADASTRO</th>
+            <th class="text-left text-zinc-300 font-mono text-xs font-bold uppercase" style="padding: 1rem 1.5rem;">AÇÕES</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody">
+          <!-- Dados serão carregados dinamicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+

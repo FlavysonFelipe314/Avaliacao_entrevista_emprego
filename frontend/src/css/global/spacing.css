@@ -1,0 +1,236 @@
+.dashboard-view main,
+.drivers-view > div:not(header),
+.vehicles-view > div:not(header),
+.tracking-view > div:not(header),
+.finance-view > div:not(header) {
+  padding: 2rem !important;
+}
+
+.dashboard-view header,
+.drivers-view header,
+.vehicles-view header,
+.tracking-view header,
+.finance-view header {
+  padding: 1.5rem 2rem !important;
+}
+
+.stat-card {
+  padding: 2rem !important;
+  margin-bottom: 0 !important;
+}
+
+.vehicle-card {
+  padding: 2rem !important;
+}
+
+.drivers-view table th,
+.drivers-view table td {
+  padding: 1rem 1.5rem !important;
+}
+
+button:not(.btn-sm):not(.camera-btn) {
+  padding: 0.75rem 1.5rem !important;
+}
+
+button.camera-btn {
+  padding: 0.75rem 1rem !important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  padding: 0.75rem 1rem !important;
+}
+
+.grid {
+  gap: 1.5rem !important;
+}
+
+.flex {
+  gap: 1rem !important;
+}
+
+.mb-6,
+.mb-8 {
+  margin-bottom: 2rem !important;
+}
+
+.login-view form {
+  gap: 2rem !important;
+}
+
+.login-view form > div {
+  margin-bottom: 2rem !important;
+}
+
+.login-view #loginScreen,
+.login-view #twoFactorScreen {
+  padding: 2.5rem !important;
+}
+
+#tactical-sidebar nav {
+  padding: 1.5rem !important;
+}
+
+#tactical-sidebar nav a {
+  margin-bottom: 0.5rem !important;
+  padding: 0.875rem 1rem !important;
+}
+
+.operation-log-entry {
+  padding: 1rem 2rem !important;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem !important;
+  margin: 0.25rem !important;
+}
+
+.border,
+.border-b,
+.border-t {
+  border-width: 1px !important;
+}
+
+label {
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+.form-group {
+  margin-bottom: 1.5rem !important;
+}
+
+.finance-view .bg-zinc-900 {
+  padding: 2rem !important;
+}
+
+.finance-view .space-y-8 > div {
+  margin-bottom: 2rem !important;
+}
+
+#transactions-list > div {
+  padding: 1.5rem 2rem !important;
+}
+
+#tactical-sidebar {
+  z-index: 10000 !important;
+  position: fixed !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.tracking-view #tactical-sidebar,
+.finance-view #tactical-sidebar,
+.drivers-view #tactical-sidebar,
+.vehicles-view #tactical-sidebar,
+.dashboard-view #tactical-sidebar {
+  z-index: 10000 !important;
+  position: fixed !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+#tactical-sidebar.translate-x-0 {
+  z-index: 10000 !important;
+  height: 100vh !important;
+}
+
+.overlay-sidebar {
+  z-index: 9998 !important;
+}
+
+.overlay-sidebar.z-9998 {
+  z-index: 9998 !important;
+}
+
+.overlay-sidebar.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.overlay-sidebar:not(.hidden) {
+  pointer-events: auto !important;
+  z-index: 9998 !important;
+}
+
+.tracking-view .leaflet-container,
+.leaflet-container {
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+.tracking-view .leaflet-pane,
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.tracking-view .leaflet-top,
+.tracking-view .leaflet-bottom,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 2 !important;
+}
+
+.tracking-view .leaflet-control,
+.leaflet-control {
+  z-index: 2 !important;
+}
+
+.tracking-view .leaflet-control-zoom,
+.leaflet-control-zoom {
+  z-index: 2 !important;
+}
+
+.tracking-view .leaflet-popup,
+.leaflet-popup {
+  z-index: 3 !important;
+}
+
+.tracking-view .leaflet-popup-pane,
+.leaflet-popup-pane {
+  z-index: 3 !important;
+}
+
+/* Container do mapa - garantir que não sobreponha */
+.tracking-view #tactical-map,
+.tracking-view .bg-zinc-900 {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.tracking-view main {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Tabela de motoristas - scroll horizontal no mobile */
+.drivers-view .overflow-x-auto {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drivers-view table {
+  min-width: 800px !important;
+}
+
+/* Logo da sidebar - espaçamento */
+#tactical-sidebar > div:first-child {
+  padding: 1.5rem !important;
+}
+
+#tactical-sidebar > div:first-child > div {
+  gap: 0.75rem !important;
+}
+
+#tactical-sidebar > div:first-child svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+

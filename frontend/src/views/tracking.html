@@ -1,0 +1,139 @@
+<main class="main-content flex-1 transition-all duration-300" style="padding: 1rem; position: relative;">
+    <div class="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden" style="position: relative;">
+      <!-- Map Container -->
+      <div id="tactical-map" class="w-full bg-zinc-950" style="position: relative; height: 400px;">
+        <!-- Leaflet map será inicializado aqui -->
+      </div>
+      
+      <!-- Controls -->
+      <div class="p-4 md:p-6 bg-zinc-800 border-t border-zinc-700">
+        <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+          <label class="text-zinc-300 font-mono text-xs uppercase">Filtrar por:</label>
+          <select id="filterStatus" class="flex-1 sm:flex-none px-4 py-2 md:px-6 md:py-3 bg-zinc-900 border border-zinc-700 rounded text-white font-mono text-sm focus:outline-none focus:border-emerald-500" style="min-height: 44px;">
+            <option value="all">Todos</option>
+            <option value="active">Em Missão</option>
+            <option value="inactive">Inativos</option>
+          </select>
+          <button id="refreshMap" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-black px-4 py-2 md:px-6 md:py-3 rounded font-mono text-sm font-bold transition-all" style="min-height: 44px;">
+            ATUALIZAR
+          </button>
+        </div>
+      </div>
+      
+      <!-- Legend -->
+      <div class="p-4 md:p-6 border-t border-zinc-800">
+        <h3 class="text-zinc-300 font-mono text-xs font-bold uppercase mb-3 md:mb-4">Legenda</h3>
+        <div class="flex flex-wrap gap-4 md:gap-8">
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 bg-emerald-500 rounded-full"></div>
+            <span class="text-zinc-400 font-mono text-xs">Em Missão</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 bg-zinc-600 rounded-full"></div>
+            <span class="text-zinc-400 font-mono text-xs">Inativo</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 bg-yellow-500 rounded-full"></div>
+            <span class="text-zinc-400 font-mono text-xs">Manutenção</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<style>
+/* CRÍTICO: Garantir que Leaflet não sobreponha a sidebar */
+.leaflet-container {
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 2 !important;
+}
+
+.leaflet-control {
+  z-index: 2 !important;
+  background: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+}
+
+.leaflet-control-zoom {
+  z-index: 2 !important;
+}
+
+.leaflet-control a {
+  background: #27272a !important;
+  color: #10b981 !important;
+  border-color: #3f3f46 !important;
+}
+
+.leaflet-control a:hover {
+  background: #3f3f46 !important;
+}
+
+.leaflet-popup {
+  z-index: 3 !important;
+}
+
+.leaflet-popup-pane {
+  z-index: 3 !important;
+}
+
+/* Estilos para marcadores do Leaflet */
+.custom-vehicle-marker {
+  background: transparent !important;
+  border: none !important;
+  z-index: 2 !important;
+}
+
+.vehicle-marker {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Estilos para popup do Leaflet */
+.custom-popup {
+  background: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 4px !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background: #18181b !important;
+  color: white !important;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+}
+
+/* Garantir que o container do mapa não sobreponha */
+#tactical-map {
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+/* Sidebar sempre acima */
+#tactical-sidebar {
+  z-index: 10000 !important;
+}
+
+.overlay-sidebar {
+  z-index: 9999 !important;
+}
+</style>
