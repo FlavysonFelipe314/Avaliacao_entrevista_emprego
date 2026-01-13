@@ -1,25 +1,10 @@
 # Sistema de Gestão de Frotas Tático
 
-Sistema completo de gestão de frotas com interface tática/militar, desenvolvido com Laravel 11 (backend) e JavaScript vanilla com jQuery (frontend).
+> Sistema completo de gestão de frotas com interface tática/militar, desenvolvido com Laravel 11 (backend) e JavaScript vanilla com jQuery (frontend).
 
-## Índice
+---
 
-- [Visão Geral](#visão-geral)
-- [Tecnologias](#tecnologias)
-- [Arquitetura](#arquitetura)
-- [Requisitos](#requisitos)
-- [Instalação](#instalação)
-- [Configuração](#configuração)
-- [Executando o Projeto](#executando-o-projeto)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Princípios SOLID](#princípios-solid)
-- [API Endpoints](#api-endpoints)
-- [Autenticação](#autenticação)
-- [Funcionalidades](#funcionalidades)
-- [Desenvolvimento](#desenvolvimento)
-- [Troubleshooting](#troubleshooting)
-
-## Visão Geral
+## Sobre o Projeto
 
 Sistema SPA (Single Page Application) para gestão completa de frotas, incluindo:
 
@@ -42,27 +27,51 @@ Sistema SPA (Single Page Application) para gestão completa de frotas, incluindo
 - Interface responsiva e tema escuro
 - Validação server-side com FormRequests
 
+---
+
+## Índice
+
+- [Visão Geral](#visão-geral)
+- [Tecnologias](#tecnologias)
+- [Arquitetura](#arquitetura)
+- [Requisitos](#requisitos)
+- [Instalação](#instalação)
+- [Configuração](#configuração)
+- [Executando o Projeto](#executando-o-projeto)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Princípios SOLID](#princípios-solid)
+- [API Endpoints](#api-endpoints)
+- [Autenticação](#autenticação)
+- [Funcionalidades](#funcionalidades)
+- [Desenvolvimento](#desenvolvimento)
+- [Troubleshooting](#troubleshooting)
+
+
 ## Tecnologias
 
 ### Backend
 
-- **Laravel 11**: Framework PHP
-- **PHP 8.2+**: Linguagem
-- **MySQL 8.4**: Banco de dados
-- **Redis**: Cache e sessões
-- **Laravel Sanctum**: Autenticação API
-- **Laravel Sail**: Ambiente Docker
+| Tecnologia | Versão | Descrição |
+|------------|--------|-----------|
+| Laravel | 11 | Framework PHP |
+| PHP | 8.2+ | Linguagem de programação |
+| MySQL | 8.4 | Banco de dados relacional |
+| Redis | - | Cache e sessões |
+| Laravel Sanctum | - | Autenticação API |
+| Laravel Sail | - | Ambiente Docker |
 
 ### Frontend
 
-- **JavaScript ES6+**: Vanilla JS com módulos
-- **jQuery 3.7+**: Manipulação DOM
-- **Vite 7.3+**: Build tool e dev server
-- **Navigo 8.11+**: Router client-side
-- **Axios 1.13+**: Cliente HTTP
-- **Tailwind CSS 4.1+**: Framework CSS
-- **SweetAlert2 11.26+**: Modais e alertas
-- **Leaflet 1.9+**: Mapas interativos
+| Tecnologia | Versão | Descrição |
+|------------|--------|-----------|
+| JavaScript | ES6+ | Vanilla JS com módulos |
+| jQuery | 3.7+ | Manipulação DOM |
+| Vite | 7.3+ | Build tool e dev server |
+| Navigo | 8.11+ | Router client-side |
+| Axios | 1.13+ | Cliente HTTP |
+| Tailwind CSS | 4.1+ | Framework CSS |
+| SweetAlert2 | 11.26+ | Modais e alertas |
+| Leaflet | 1.9+ | Mapas interativos |
 
 ## Arquitetura
 
@@ -106,9 +115,12 @@ src/js/
 
 ## Requisitos
 
-- **Docker Desktop** (Windows/Mac) ou **Docker + Docker Compose** (Linux)
-- **Node.js 18+** e **npm**
-- **Git**
+Antes de começar, certifique-se de ter instalado:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (Windows/Mac) ou **Docker + Docker Compose** (Linux)
+- [Node.js](https://nodejs.org/) 18+ e **npm**
+- [Git](https://git-scm.com/)
+- [Composer](https://getcomposer.org/) (para desenvolvimento local sem Docker)
 
 ## Instalação
 
@@ -148,7 +160,7 @@ npm install
 ```bash
 cd ../backend
 
-# Configurar variáveis de ambiente no .env
+# Editar arquivo .env e configurar:
 # DB_DATABASE=emprego
 # DB_USERNAME=sail
 # DB_PASSWORD=password
@@ -194,26 +206,28 @@ VITE_API_URL=http://localhost/api
 ### Opção 1: Laravel Sail (Recomendado)
 
 ```bash
+# 1. Iniciar containers Docker
 cd backend
-
-# Iniciar containers Docker
 ./vendor/bin/sail up -d
 
-# Executar migrations
+# 2. Executar migrations
 ./vendor/bin/sail artisan migrate
 
-# Popular banco de dados
+# 3. Popular banco de dados
 ./vendor/bin/sail artisan db:seed
 
-# Em outro terminal, iniciar frontend
+# 4. Em outro terminal, iniciar frontend
 cd ../frontend
 npm run dev
 ```
 
-**Acessos:**
-- Frontend: http://localhost:5173
-- Backend API: http://localhost/api
-- Mailpit: http://localhost:8025
+**Acessos após iniciar:**
+
+| Serviço | URL |
+|---------|-----|
+| Frontend | http://localhost:5173 |
+| Backend API | http://localhost/api |
+| Mailpit | http://localhost:8025 |
 
 ### Opção 2: Ambiente Local
 
@@ -300,74 +314,74 @@ emprego/
 
 ### Autenticação
 
-```
-POST   /api/login              # Login (email + senha)
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| POST | `/api/login` | Login (email + senha) |
 
 ### Dashboard
 
-```
-GET    /api/dashboard/stats    # Estatísticas gerais
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/api/dashboard/stats` | Estatísticas gerais |
 
 ### Motoristas
 
-```
-GET    /api/motoristas         # Listar todos
-GET    /api/motoristas/{id}   # Buscar por ID
-POST   /api/motoristas         # Criar
-PUT    /api/motoristas/{id}   # Atualizar
-DELETE /api/motoristas/{id}   # Deletar
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/api/motoristas` | Listar todos |
+| GET | `/api/motoristas/{id}` | Buscar por ID |
+| POST | `/api/motoristas` | Criar |
+| PUT | `/api/motoristas/{id}` | Atualizar |
+| DELETE | `/api/motoristas/{id}` | Deletar |
 
 ### Veículos
 
-```
-GET    /api/vehicles           # Listar todos
-GET    /api/vehicles/available # Listar disponíveis
-GET    /api/vehicles/{id}     # Buscar por ID
-POST   /api/vehicles          # Criar
-PUT    /api/vehicles/{id}     # Atualizar
-DELETE /api/vehicles/{id}     # Deletar
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/api/vehicles` | Listar todos |
+| GET | `/api/vehicles/available` | Listar disponíveis |
+| GET | `/api/vehicles/{id}` | Buscar por ID |
+| POST | `/api/vehicles` | Criar |
+| PUT | `/api/vehicles/{id}` | Atualizar |
+| DELETE | `/api/vehicles/{id}` | Deletar |
 
 ### Missões
 
-```
-GET    /api/missions           # Listar todas
-GET    /api/missions/{id}     # Buscar por ID
-POST   /api/missions/start    # Iniciar missão
-POST   /api/missions/{id}/stop # Finalizar missão
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/api/missions` | Listar todas |
+| GET | `/api/missions/{id}` | Buscar por ID |
+| POST | `/api/missions/start` | Iniciar missão |
+| POST | `/api/missions/{id}/stop` | Finalizar missão |
 
 ### Financeiro
 
-```
-GET    /api/finance/summary              # Resumo financeiro
-GET    /api/finance/transactions         # Listar transações
-POST   /api/finance/transactions         # Criar transação
-PUT    /api/finance/transactions/{id}    # Atualizar transação
-DELETE /api/finance/transactions/{id}    # Deletar transação
-GET    /api/finance/budgets              # Listar orçamentos
-GET    /api/finance/budgets/active       # Orçamento ativo
-POST   /api/finance/budgets              # Criar orçamento
-PUT    /api/finance/budgets/{id}         # Atualizar orçamento
-DELETE /api/finance/budgets/{id}         # Deletar orçamento
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/api/finance/summary` | Resumo financeiro |
+| GET | `/api/finance/transactions` | Listar transações |
+| POST | `/api/finance/transactions` | Criar transação |
+| PUT | `/api/finance/transactions/{id}` | Atualizar transação |
+| DELETE | `/api/finance/transactions/{id}` | Deletar transação |
+| GET | `/api/finance/budgets` | Listar orçamentos |
+| GET | `/api/finance/budgets/active` | Orçamento ativo |
+| POST | `/api/finance/budgets` | Criar orçamento |
+| PUT | `/api/finance/budgets/{id}` | Atualizar orçamento |
+| DELETE | `/api/finance/budgets/{id}` | Deletar orçamento |
 
 ### Usuários
 
-```
-GET    /api/users              # Listar todos
-GET    /api/users/{id}        # Buscar por ID
-POST   /api/users             # Criar
-PUT    /api/users/{id}        # Atualizar
-DELETE /api/users/{id}        # Deletar
-GET    /api/users/me          # Perfil do usuário autenticado
-PUT    /api/users/me          # Atualizar perfil
-```
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/api/users` | Listar todos |
+| GET | `/api/users/{id}` | Buscar por ID |
+| POST | `/api/users` | Criar |
+| PUT | `/api/users/{id}` | Atualizar |
+| DELETE | `/api/users/{id}` | Deletar |
+| GET | `/api/users/me` | Perfil do usuário autenticado |
+| PUT | `/api/users/me` | Atualizar perfil |
 
-**Todas as rotas (exceto `/api/login`) requerem autenticação via `auth:sanctum`.**
+> **Nota:** Todas as rotas (exceto `/api/login`) requerem autenticação via `auth:sanctum`.
 
 ## Autenticação
 
@@ -561,5 +575,19 @@ Este é um projeto privado. Para contribuições, entre em contato com os manten
 
 **Desenvolvido usando Laravel e JavaScript**
 
-#   A v a l i a c a o _ e n t r e v i s t a _ e m p r e g o  
+## Estrutura do Repositório
+
+```
+emprego/
+├── backend/          # API Laravel 11
+├── frontend/         # SPA JavaScript
+└── README.md         # Este arquivo
+```
+
+Para mais detalhes, consulte os READMEs específicos:
+- [Backend README](backend/README.md)
+- [Frontend README](frontend/README.md)
+
+#   A v a l i a c a o _ e n t r e v i s t a _ e m p r e g o 
+ 
  

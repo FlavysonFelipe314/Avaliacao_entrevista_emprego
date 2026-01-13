@@ -1,6 +1,8 @@
 # Backend - Sistema de Gestão de Frotas
 
-API REST desenvolvida com Laravel 11 seguindo princípios SOLID, Service Pattern e Clean Architecture.
+> API REST desenvolvida com Laravel 11 seguindo princípios SOLID, Service Pattern e Clean Architecture.
+
+---
 
 ## Índice
 
@@ -40,18 +42,22 @@ API RESTful completa para gestão de frotas, incluindo motoristas, veículos, mi
 
 ### Core
 
-- **Laravel 11**: Framework PHP
-- **PHP 8.2+**: Linguagem de programação
-- **MySQL 8.4**: Banco de dados relacional
-- **Redis**: Cache e sessões
-- **Laravel Sanctum**: Autenticação API
+| Tecnologia | Versão | Descrição |
+|------------|--------|-----------|
+| Laravel | 11 | Framework PHP |
+| PHP | 8.2+ | Linguagem de programação |
+| MySQL | 8.4 | Banco de dados relacional |
+| Redis | - | Cache e sessões |
+| Laravel Sanctum | - | Autenticação API |
 
 ### Ferramentas
 
-- **Laravel Sail**: Ambiente Docker
-- **Composer**: Gerenciador de dependências PHP
-- **Laravel Pint**: Code style fixer
-- **Pest**: Framework de testes
+| Tecnologia | Descrição |
+|------------|-----------|
+| Laravel Sail | Ambiente Docker |
+| Composer | Gerenciador de dependências PHP |
+| Laravel Pint | Code style fixer |
+| Pest | Framework de testes |
 
 ## Estrutura do Projeto
 
@@ -655,3 +661,9 @@ tail -f storage/logs/laravel.log
 ## Licença
 
 Este projeto é privado e proprietário.
+
+---
+
+**Parte do Sistema de Gestão de Frotas Tático**
+
+Para mais informações sobre o projeto completo, consulte o [README principal](../README.md).

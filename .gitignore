@@ -37,11 +37,8 @@ logs/
 *.old
 
 # Arquivos de ambiente
-.env
-.env.local
 .env.*.local
 .env.backup
-.env.production
 
 # Arquivos de configuração local
 config.local.php
@@ -86,3 +83,5 @@ docker-compose.override.yml
 *.seed
 *.pid.lock
 
+config.bat
+node_modules

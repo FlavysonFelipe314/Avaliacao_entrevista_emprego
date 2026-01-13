@@ -1,6 +1,8 @@
 # Frontend - Sistema de Gestão de Frotas
 
-SPA (Single Page Application) desenvolvido com JavaScript vanilla, jQuery, Vite e tecnologias modernas para gestão de frotas com interface tática/militar.
+> SPA (Single Page Application) desenvolvido com JavaScript vanilla, jQuery, Vite e tecnologias modernas para gestão de frotas com interface tática/militar.
+
+---
 
 ## Índice
 
@@ -37,22 +39,28 @@ Frontend SPA que se comunica com a API Laravel através de requisições REST. U
 
 ### Core
 
-- **JavaScript ES6+**: Vanilla JS com módulos ES6
-- **jQuery 3.7+**: Manipulação DOM e eventos
-- **Vite 7.3+**: Build tool e dev server com HMR
-- **Navigo 8.11+**: Router client-side
-- **Axios 1.13+**: Cliente HTTP para API
+| Tecnologia | Versão | Descrição |
+|------------|--------|-----------|
+| JavaScript | ES6+ | Vanilla JS com módulos ES6 |
+| jQuery | 3.7+ | Manipulação DOM e eventos |
+| Vite | 7.3+ | Build tool e dev server com HMR |
+| Navigo | 8.11+ | Router client-side |
+| Axios | 1.13+ | Cliente HTTP para API |
 
 ### UI/UX
 
-- **Tailwind CSS 4.1+**: Framework CSS utility-first
-- **SweetAlert2 11.26+**: Modais e notificações
-- **Leaflet 1.9+**: Mapas interativos para rastreamento
+| Tecnologia | Versão | Descrição |
+|------------|--------|-----------|
+| Tailwind CSS | 4.1+ | Framework CSS utility-first |
+| SweetAlert2 | 11.26+ | Modais e notificações |
+| Leaflet | 1.9+ | Mapas interativos para rastreamento |
 
 ### Build Tools
 
-- **PostCSS**: Processamento de CSS
-- **Autoprefixer**: Compatibilidade de navegadores
+| Tecnologia | Descrição |
+|------------|-----------|
+| PostCSS | Processamento de CSS |
+| Autoprefixer | Compatibilidade de navegadores |
 
 ## Estrutura do Projeto
 
@@ -518,3 +526,9 @@ location /api {
 ## Licença
 
 Este projeto é privado e proprietário.
+
+---
+
+**Parte do Sistema de Gestão de Frotas Tático**
+
+Para mais informações sobre o projeto completo, consulte o [README principal](../README.md).
